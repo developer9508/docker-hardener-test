@@ -1,0 +1,22 @@
+name: Test Docker Hardener
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Docker Hardener
+        uses: your-username/docker-hardener@v1
+        with:
+          dockerfile: examples/sample.Dockerfile
+          scan: true
+          save-json: true
+          summary: true
+          fail-on-critical: true
