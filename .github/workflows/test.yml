@@ -1,23 +1,22 @@
-name: Test Docker Hardener
+name: Docker Hardener Test
 
 on:
+  pull_request:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
-  scan:
+  harden:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run Docker Hardener
+      - name: 🔒 Run Docker Image Hardener
         uses: developer9508/docker-image-hardener-action@main
         with:
           dockerfile: examples/sample.Dockerfile
           scan: true
-          save-json: true
           summary: true
+          save-json: true
           fail-on-critical: true
-
+          severity: HIGH,CRITICAL
