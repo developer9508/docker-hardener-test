@@ -20,3 +20,4 @@ jobs:
           save-json: true
           fail-on-critical: true
           severity: HIGH,CRITICAL
+
