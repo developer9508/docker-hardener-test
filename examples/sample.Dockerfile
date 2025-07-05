@@ -1,7 +1,9 @@
 FROM python:3.11-slim
 
 # Intentionally using ADD instead of COPY to trigger a warning
-ADD . /app
+#ADD . /app
+
+COPY . /app
 
 WORKDIR /app
 
