@@ -19,4 +19,7 @@ jobs:
           summary: true
           save-json: true
           severity: HIGH,CRITICAL
+          sbom: true
+          sarif: true
+          scorecard: true
 
